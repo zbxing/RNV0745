@@ -1,3 +1,3 @@
-C:\Windows\System32\cmd.exe /d /s /c E:\Projects\PragmaEnergy
-E:
+C:\Windows\System32\cmd.exe /d /s /c D:\Projects\RNV0745
+D:
 cmd
