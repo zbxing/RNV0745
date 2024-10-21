@@ -102,18 +102,25 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
-    packagingOptions {
-        pickFirst "**/libhermes.so"
-        pickFirst "**/libjsc.so"
-    }
+    // Fix by zbx, to avoid errors and Hermes library dependency issues
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs += ['../node_modules/react-native/ReactAndroid/hermes-engine/build/intermediates/cxx/Release/4b6qr563/obj']
+//        }
+//    }
+//    packagingOptions {
+//        pickFirst "**/libhermes.so"
+//        pickFirst "**/libjsc.so"
+//    }
 }
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
-//    implementation("com.facebook.react:react-android")
-    implementation project(':packages:react-native:ReactAndroid')
+    implementation("com.facebook.react:react-android")
+//    implementation project(':packages:react-native:ReactAndroid')
 
     if (hermesEnabled.toBoolean()) {
+//        implementation project(':packages:react-native:ReactAndroid:hermes-engine')
         implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor

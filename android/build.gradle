@@ -1,3 +1,6 @@
+
+// 终端编译源码生成aar命令: ./gradlew :packages:react-native:ReactAndroid:assembleDebug assembleRelease publishToMavenLocal --no-daemon
+
 buildscript {
     ext {
         buildToolsVersion = "34.0.0"
