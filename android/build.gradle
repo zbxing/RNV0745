@@ -1,5 +1,6 @@
 
-// 终端编译源码生成aar命令: ./gradlew :packages:react-native:ReactAndroid:assembleDebug assembleRelease publishToMavenLocal --no-daemon
+// 终端编译源码生成aar命令:
+// ./gradlew :react-native:packages:react-native:ReactAndroid:assembleDebug :react-native:packages:react-native:ReactAndroid:assembleRelease :react-native:packages:react-native:ReactAndroid:publishToMavenLocal --no-daemon
 
 buildscript {
     ext {
