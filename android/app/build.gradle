@@ -102,16 +102,6 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
-    // Fix by zbx, to avoid errors and Hermes library dependency issues
-//    sourceSets {
-//        main {
-//            jniLibs.srcDirs += ['../node_modules/react-native/ReactAndroid/hermes-engine/build/intermediates/cxx/Release/4b6qr563/obj']
-//        }
-//    }
-//    packagingOptions {
-//        pickFirst "**/libhermes.so"
-//        pickFirst "**/libjsc.so"
-//    }
 }
 
 dependencies {
@@ -120,7 +110,6 @@ dependencies {
 //    implementation project(':packages:react-native:ReactAndroid')
 
     if (hermesEnabled.toBoolean()) {
-//        implementation project(':packages:react-native:ReactAndroid:hermes-engine')
         implementation("com.facebook.react:hermes-android")
     } else {
         implementation jscFlavor
